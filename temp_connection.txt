@@ -1,0 +1,41 @@
+import sqlalchemy
+from sqlalchemy import exc
+# from sqlalchemy.pool import QueuePool
+# from sqlalchemy.orm import sessionmaker
+import properties
+
+
+def getengine():
+
+    try:
+        conn_str = properties.db_driver + '://' + \
+            properties.user + ':' + \
+            properties.password + '@' + \
+            properties.db_host + '/' + \
+            properties.db_schema
+        # conn_str = 'mysql+pymysql' + '://' + 'root' + ':' + 'root' + '@' + '127.0.0.1' + '/' + 'dupontDB'
+
+        engine = sqlalchemy.create_engine(conn_str,
+                                          max_overflow=10,
+                                          pool_size=5)
+        return engine
+
+    except exc.OperationalError:
+        raise
+
+
+def getconn():
+
+    try:
+        c = getengine().connect()
+        return c
+
+    except exc.OperationalError:
+        raise
+
+employee_details= {}
+
+sql = text('INSERT INTO employee (id, empNmae,....) VALUES (:id, :empName,....)')
+result = con.execute(sql, id=employee_details['id'], employee_details['empName'],....)
+emp_id = result.lastrowid
+
