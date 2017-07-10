@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Order details</title>
+</head>
+<body>
+<form action="/save_order" method="post">
+    <table align="center">
+        <tr>
+            <td>Customer Name:<input type="text"  name="customer_name" size="10"></td>
+            <td>Date:<input type="date" name="date"></td>
+            <td>GST Number:<input type="text" name="gst_number" size="10"></td>
+        </tr>
+        <tr>
+            <td>Shrikhand</td>
+        </tr>
+        <tr>
+            <td>100<input type="text" name="shrikhand_100" size="5">
+            </td>
+            <td>250<input type="text" name="shrikhand_250" size="5"></td>
+            <td>500<input type="text" name="shrikhand_500" size="5"></td>
+        </tr>
+        <tr>
+            <td>Amrakhand</td>
+        </tr>
+        <tr>
+            <td>100<input type="text" name="amrakhand_100" size="5"></td>
+            <td>250<input type="text" name="amrakhand_250" size="5"></td>
+            <td>500<input type="text" name="amrakhand_500" size="5"></td>
+        </tr>
+        <tr>
+            <td>Lassi</td>
+        </tr>
+        <tr>
+            <td>200<input type="text" name="lassi" size="5"></td>
+        </tr>
+        <tr>
+            <td>Curd</td>
+        </tr>
+        <tr>
+            <td>50<input type="text" name="curd_50" size="5"></td>
+            <td>100<input type="text" name="curd_100" size="5"></td>
+            <td>200<input type="text" name="curd_200" size="5"></td>
+        </tr>
+        <tr>
+            <td>400<input type="text" name="curd_400" size="5"></td>
+        </tr>
+        <tr>
+            <td>100</td>
+        </tr>
+        <tr>
+            <td>Ghee</td>
+        </tr>
+        <tr>
+            <td>200<input type="text" name="ghee_200" size="5"></td>
+            <td>500<input type="text" name="ghee_500" size="5"></td>
+            <td>1000<input type="text" name="ghee_1000" size="5"></td>
+        </tr>
+        <tr>
+            <td>Ghee Cow</td>
+        </tr>
+        <tr>
+            <td>200<input type="text" name="cow_ghee_200" size="5"></td>
+            <td>500<input type="text" name="cow_ghee_500" size="5"></td>
+            <td>1000<input type="text" name="cow_ghee_1000" size="5"></td>
+        </tr>
+        <tr>
+        <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
+
+</form>
+</body>
+</html>
