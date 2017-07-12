@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <head>
     <meta charset="UTF-8">
     <title>Order details</title>
@@ -14,9 +8,9 @@
 <form action="/save_order" method="post">
     <table align="center">
         <tr>
-            <td>Customer Name:<input type="text"  name="customer_name" size="10"></td>
-            <td>Date:<input type="date" name="date"></td>
-            <td>GST Number:<input type="text" name="gst_number" size="10"></td>
+            <td>Customer Name:<input type="text" value="{{customer_names}}" name="customer_name" size="10"></td>
+            <td>Date:<input type="date" name="date" value="{{dates}}"></td>
+            <td>GST Number:<input type="text" name="gst_number" value="{{gst_numbers}}" size="10"></td>
         </tr>
         <tr>
             <td>Shrikhand</td>

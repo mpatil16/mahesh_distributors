@@ -4,6 +4,7 @@ import customerDao
 app = Flask(__name__)
 
 
+@app.route('/')
 @app.route('/index')
 def index():
     return render_template('index.html')
@@ -14,19 +15,17 @@ def order():
     customer_name = request.form['customer_name']
     date = request.form['date']
     customer_details = customerDao.get_customer(customer_name)
-    print("details", customer_name, date)
-    print(customer_details)
-    return render_template('order_page.html')
+    gst_number = customer_details[4]
+    return render_template('order_page.html', customer_names=customer_name, dates=date, gst_numbers=gst_number)
 
 
-# @app.route('/customer/<customer_id>', methods=['GET'])
-@app.route('/customer/<customer_name>', methods=['GET'])
+@app.route('/customer_name/<customer_name>', methods=['GET'])
 def get_customer_info(customer_name):
     customer = customerDao.get_customer(customer_name)
-    return 'Hello'
+    return render_template('customer_details.html', customers=customer)
 
 
-@app.route('/customer/add', methods=['GET','POST'])
+@app.route('/customer/add', methods=['GET', 'POST'])
 def add_new_customer():
     if request.method == 'POST':
         customer_id = request.form['id']
@@ -35,8 +34,14 @@ def add_new_customer():
         contact = request.form['contact']
         gst = request.form['gst']
         customerDao.add_customer(customer_id, name, address, contact, gst)
-        return 'Added Sucessfully'
+        return render_template('add_customer.html')
     return render_template('add_customer.html')
+
+
+@app.route('/customers')
+def get_all_customers():
+    customer_list = customerDao.get_all()
+    return render_template('customer_details_page.html', customer_lists=customer_list)
 
 
 if __name__ == '__main__':

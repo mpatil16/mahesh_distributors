@@ -23,3 +23,11 @@ def add_customer(customer_id, name, address, contact, gst):
     cur = conn.cursor()
     cur.execute("INSERT INTO customers VALUES(?, ?, ?, ?, ?)", (customer_id, name, address, contact, gst))
     conn.commit()
+
+
+def get_all():
+    customer_list = []
+    cursor = conn.execute('select * from customers')
+    for row in cursor:
+        customer_list.append(row)
+    return customer_list
