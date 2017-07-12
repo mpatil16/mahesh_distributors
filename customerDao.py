@@ -6,6 +6,7 @@ print("Opened database successfully")
 
 
 def get_customer(customer_name):
+    print("GET CUSTOMER")
     cursor = conn.execute("SELECT customer_id, customer_name, address, contact_number, gst_number from customers")
     customer = []
     for row in cursor:

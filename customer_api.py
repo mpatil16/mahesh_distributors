@@ -12,10 +12,13 @@ def index():
 
 @app.route('/order', methods=['POST'])
 def order():
-    customer_name = request.form['customer_name']
+    print("inside order route")
+    customer_name = request.form['customer_list']
     date = request.form['date']
+    print("Still inside")
     customer_details = customerDao.get_customer(customer_name)
     gst_number = customer_details[4]
+    print(customer_name, gst_number, date)
     return render_template('order_page.html', customer_names=customer_name, dates=date, gst_numbers=gst_number)
 
 

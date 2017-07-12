@@ -6,14 +6,16 @@
 </head>
 <body>
 <form action="/order" method="post">
-    <select>
-        <option value="Jai Ambe">Jai Ambe</option>
-        <option value="Mahesh">Mahesh</option>
-        <option value="Abhishek">Abhishek</option>
-        <option value="Abhi">Abhi</option>
-    </select>
-    <input type="date" name="date" required>
-    <input type="submit" value="Sumbit">
+    <div align="center">
+        <select name="customer_list" style="width: 200px;">
+            <option value="Jai Ambe">Jai Ambe</option>
+            <option value="Mahesh">Mahesh</option>
+            <option value="Abhishek">Abhishek</option>
+            <option value="Abhi">Abhi</option>
+        </select>
+        <input type="date" name="date" required>
+        <input type="submit" value="Sumbit">
+    </div>
 </form>
 </body>
 </html>
