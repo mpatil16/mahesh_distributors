@@ -5,71 +5,74 @@
     <title>Order details</title>
 </head>
 <body>
-<form action="/save_order" method="post">
-    <table align="center">
-        <tr>
-            <td>Customer Name:<input type="text" value="{{customer_names}}" name="customer_name" size="10"></td>
-            <td>Date:<input type="date" name="date" value="{{dates}}"></td>
-            <td>GST Number:<input type="text" name="gst_number" value="{{gst_numbers}}" size="10"></td>
-        </tr>
-        <tr>
-            <td>Shrikhand</td>
-        </tr>
-        <tr>
-            <td>100<input type="text" name="shrikhand_100" size="5">
-            </td>
-            <td>250<input type="text" name="shrikhand_250" size="5"></td>
-            <td>500<input type="text" name="shrikhand_500" size="5"></td>
-        </tr>
-        <tr>
-            <td>Amrakhand</td>
-        </tr>
-        <tr>
-            <td>100<input type="text" name="amrakhand_100" size="5"></td>
-            <td>250<input type="text" name="amrakhand_250" size="5"></td>
-            <td>500<input type="text" name="amrakhand_500" size="5"></td>
-        </tr>
-        <tr>
-            <td>Lassi</td>
-        </tr>
-        <tr>
-            <td>200<input type="text" name="lassi" size="5"></td>
-        </tr>
-        <tr>
-            <td>Curd</td>
-        </tr>
-        <tr>
-            <td>50<input type="text" name="curd_50" size="5"></td>
-            <td>100<input type="text" name="curd_100" size="5"></td>
-            <td>200<input type="text" name="curd_200" size="5"></td>
-        </tr>
-        <tr>
-            <td>400<input type="text" name="curd_400" size="5"></td>
-        </tr>
-        <tr>
-            <td>100</td>
-        </tr>
-        <tr>
-            <td>Ghee</td>
-        </tr>
-        <tr>
-            <td>200<input type="text" name="ghee_200" size="5"></td>
-            <td>500<input type="text" name="ghee_500" size="5"></td>
-            <td>1000<input type="text" name="ghee_1000" size="5"></td>
-        </tr>
-        <tr>
-            <td>Ghee Cow</td>
-        </tr>
-        <tr>
-            <td>200<input type="text" name="cow_ghee_200" size="5"></td>
-            <td>500<input type="text" name="cow_ghee_500" size="5"></td>
-            <td>1000<input type="text" name="cow_ghee_1000" size="5"></td>
-        </tr>
-        <tr>
-        <td><input type="submit" value="Submit"></td>
-        </tr>
-    </table>
+    <form action="/save_order" method="post">
+        <div align="center">
+            <table>
+                <tr>
+                    <td>Customer Name:<input type="text" value="{{customer_names}}" name="customer_name" size="10"></td>
+                    <td>Date:<input type="date" name="date" value="{{dates}}"></td>
+                    <td>GST Number:<input type="text" name="gst_number" value="{{gst_numbers}}" size="10"></td>
+                </tr>
+                <tr>
+                    <td>Shrikhand</td>
+                </tr>
+                <tr>
+                    <td>50<input type="text" name="shrikhand_50" size="5"></td>
+                    <td>100<input type="text" name="shrikhand_100" size="5"></td>
+                    <td>250<input type="text" name="shrikhand_250" size="5"></td>
+                    <td>500<input type="text" name="shrikhand_500" size="5"></td>
+                </tr>
+                <tr>
+                    <td>Amrakhand</td>
+                </tr>
+                <tr>
+                    <td>50<input type="text" name="amrakhand_50" size="5"></td>
+                    <td>100<input type="text" name="amrakhand_100" size="5"></td>
+                    <td>250<input type="text" name="amrakhand_250" size="5"></td>
+                    <td>500<input type="text" name="amrakhand_500" size="5"></td>
+                </tr>
+                <tr>
+                    <td>Lassi</td>
+                </tr>
+                <tr>
+                    <td>200<input type="text" name="lassi" size="5"></td>
+                </tr>
+                <tr>
+                    <td>Curd</td>
+                </tr>
+                <tr>
+                    <td>50<input type="text" name="curd_50" size="5"></td>
+                    <td>100<input type="text" name="curd_100" size="5"></td>
+                    <td>200<input type="text" name="curd_200" size="5"></td>
+                </tr>
+                <tr>
+                    <td>400<input type="text" name="curd_400" size="5"></td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Ghee</td>
+                </tr>
+                <tr>
+                    <td>200<input type="text" name="ghee_200" size="5"></td>
+                    <td>500<input type="text" name="ghee_500" size="5"></td>
+                    <td>1000<input type="text" name="ghee_1000" size="5"></td>
+                </tr>
+                <tr>
+                    <td>Ghee Cow</td>
+                </tr>
+                <tr>
+                    <td>200<input type="text" name="cow_ghee_200" size="5"></td>
+                    <td>500<input type="text" name="cow_ghee_500" size="5"></td>
+                    <td>1000<input type="text" name="cow_ghee_1000" size="5"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit"></td>
+                </tr>
+            </table>
+        </div>
 
-</form>
+    </form>
 </body>
 </html>
