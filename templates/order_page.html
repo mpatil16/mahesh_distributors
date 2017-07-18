@@ -8,66 +8,104 @@
     <form action="/save_order" method="post">
         <div align="center">
             <table>
+                <tr align="center">
+                    <td>Customer Name:</td><td><input type="text" value="{{customer_names}}" name="customer_name" size="10"></td>
+                    <td>Date:</td><td><input type="date" name="date" value="{{dates}}"></td>
+                    <td>GST Number:</td><td><input type="text" name="gst_number" value="{{gst_numbers}}" size="10"></td>
+                </tr>
+            </table>
+        </div>
+        <div align="center">
+            <table>
+                <tr></tr><tr></tr>
                 <tr>
-                    <td>Customer Name:<input type="text" value="{{customer_names}}" name="customer_name" size="10"></td>
-                    <td>Date:<input type="date" name="date" value="{{dates}}"></td>
-                    <td>GST Number:<input type="text" name="gst_number" value="{{gst_numbers}}" size="10"></td>
+                    <td align="center"><b>Shrikhand</b></td>
                 </tr>
                 <tr>
-                    <td>Shrikhand</td>
+                    <td align="center">50</td><td><input type="text" name="shrikhand_50" size="5"></td>
+                    <td align="center">100</td><td><input type="text" name="shrikhand_100" size="5"></td>
+                    <td align="center">250</td><td><input type="text" name="shrikhand_250" size="5"></td>
+                    <td align="center">500</td><td><input type="text" name="shrikhand_500" size="5"></>
                 </tr>
                 <tr>
-                    <td>50<input type="text" name="shrikhand_50" size="5"></td>
-                    <td>100<input type="text" name="shrikhand_100" size="5"></td>
-                    <td>250<input type="text" name="shrikhand_250" size="5"></td>
-                    <td>500<input type="text" name="shrikhand_500" size="5"></td>
+                    <td align="center"><b>Amrakhand</b></td>
                 </tr>
                 <tr>
-                    <td>Amrakhand</td>
+                    <td align="center">50</td><td><input type="text" name="amrakhand_50" size="5"></td>
+                    <td align="center">100</td><td><input type="text" name="amrakhand_100" size="5"></td>
+                    <td align="center">250</td><td><input type="text" name="amrakhand_250" size="5"></td>
+                    <td align="center">500</td><td><input type="text" name="amrakhand_500" size="5"></td>
                 </tr>
                 <tr>
-                    <td>50<input type="text" name="amrakhand_50" size="5"></td>
-                    <td>100<input type="text" name="amrakhand_100" size="5"></td>
-                    <td>250<input type="text" name="amrakhand_250" size="5"></td>
-                    <td>500<input type="text" name="amrakhand_500" size="5"></td>
+                    <td align="center"><b>Lassi</b></td>
                 </tr>
                 <tr>
-                    <td>Lassi</td>
+                    <td align="center">200</td><td><input type="text" name="lassi" size="5"></td>
                 </tr>
                 <tr>
-                    <td>200<input type="text" name="lassi" size="5"></td>
+                    <td align="center"><b>Curd</b></td>
                 </tr>
                 <tr>
-                    <td>Curd</td>
+                    <td align="center">50</td><td><input type="text" name="curd_50" size="5"></td>
+                    <td align="center">100</td><td><input type="text" name="curd_100" size="5"></td>
+                    <td align="center">200</td><td><input type="text" name="curd_200" size="5"></td>
+                    <td align="center">400</td><td><input type="text" name="curd_400" size="5"></td>
                 </tr>
                 <tr>
-                    <td>50<input type="text" name="curd_50" size="5"></td>
-                    <td>100<input type="text" name="curd_100" size="5"></td>
-                    <td>200<input type="text" name="curd_200" size="5"></td>
+                    <td align="center"><b>Buffalo Ghee</b></td>
                 </tr>
                 <tr>
-                    <td>400<input type="text" name="curd_400" size="5"></td>
+                    <td align="center">200</td><td><input type="text" name="ghee_200" size="5"></td>
+                    <td align="center">500</td><td><input type="text" name="ghee_500" size="5"></td>
+                    <td align="center">1000</td><td><input type="text" name="ghee_1000" size="5"></td>
                 </tr>
                 <tr>
-                    <td>100</td>
+                    <td align="center"><b>Cow Ghee</b></td>
                 </tr>
                 <tr>
-                    <td>Ghee</td>
+                    <td align="center">200</td><td><input type="text" name="cow_ghee_200" size="5"></td>
+                    <td align="center">500</td><td><input type="text" name="cow_ghee_500" size="5"></td>
+                    <td align="center">1000</td><td><input type="text" name="cow_ghee_1000" size="5"></td>
                 </tr>
                 <tr>
-                    <td>200<input type="text" name="ghee_200" size="5"></td>
-                    <td>500<input type="text" name="ghee_500" size="5"></td>
-                    <td>1000<input type="text" name="ghee_1000" size="5"></td>
+                    <td align="center"><b>Butter</b></td>
                 </tr>
                 <tr>
-                    <td>Ghee Cow</td>
+                    <td align="center">100</td><td><input type="text" name="butter_100" size="5"></td>
+                    <td align="center">500</td><td><input type="text" name="butter_500" size="5"></td>
                 </tr>
                 <tr>
-                    <td>200<input type="text" name="cow_ghee_200" size="5"></td>
-                    <td>500<input type="text" name="cow_ghee_500" size="5"></td>
-                    <td>1000<input type="text" name="cow_ghee_1000" size="5"></td>
+                <td align="center"><b>Paneer</b></td>
                 </tr>
                 <tr>
+                <td align="center">200</td><td><input type="text" name="paneer_200" size="5"></td>
+                <td align="center">500</td><td><input type="text" name="paneer_500" size="5"></td>
+                </tr>
+                <tr>
+                <td align="center"><b>Plain Tak</b></td>
+                </tr>
+                <tr>
+                <td align="center">500</td><td><input type="text" name="plain_tak" size="5"></td>
+                </tr>
+                <tr>
+                <td align="center"><b>Warna Aqua Water</b></td>
+                </tr>
+                <tr>
+                <td align="center">500</td><td><input type="text" name="plain_tak" size="5"></td>
+                </tr>
+                <td align="center"><b>Tetra Tak</b></td>
+                </tr>
+                <tr>
+                <td align="center">200</td><td><input type="text" name="plain_tak" size="5"></td>
+                </tr>
+                <td align="center"><b>Tetra Lassi</b></td>
+                </tr>
+                <tr>
+                <td align="center">200</td><td><input type="text" name="plain_tak" size="5"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
                     <td><input type="submit" value="Submit"></td>
                 </tr>
             </table>
