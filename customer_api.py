@@ -13,7 +13,9 @@ def index():
 
 @app.route('/order', methods=['POST'])
 def order():
+    print('Inside order route')
     customer_name = request.form['customer_list']
+    print('Customer Name', customer_name)
     date = request.form['date']
     customer_details = customerDao.get_customer(customer_name)
     gst_number = customer_details[4]
@@ -70,7 +72,7 @@ def get_order_details(customer_name):
 @app.route('/customer_name/<customer_name>', methods=['GET'])
 def get_customer_info(customer_name):
     customer = customerDao.get_customer(customer_name)
-    return render_template('customer_details.html', customers=customer)
+    return render_template('customer_details_page.html', customers=customer)
 
 
 @app.route('/customer/add', methods=['GET', 'POST'])
