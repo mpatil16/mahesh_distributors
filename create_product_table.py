@@ -3,6 +3,9 @@ import sqlite3
 
 conn = sqlite3.connect('test.db')
 
+conn.execute('''drop table Records''')
+# print('Table Dropped Successfully')
+
 conn.execute('''CREATE TABLE Records(customer_name varchar(50), date date, 
             gst_number varchar(20), shrikhand_50 number(5), shrikhand_100
             number(5), shrikhand_250 number(5), shrikhand_500 number(5),
@@ -14,6 +17,7 @@ conn.execute('''CREATE TABLE Records(customer_name varchar(50), date date,
             cow_1000 number(5), butter_100 number(5), butter_500 number(5), 
             paneer_200 number(5), paneer_500 number(5), plain_tak number(5),
             aqua_water number(5), tetra_tak number(5), tetra_lassi number(5));''')
+
 print("Table created successfully")
 
 conn.close()
