@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mahesh Distributors</title>
+    <title>Bill Details</title>
 </head>
 <body>
-<form action="/order" method="post">
+<form action="/print_bill" method="post">
     <div align="center">
         <select name="customer_list" style="width: 200px;">
             <option value="Jai Ambe">Jai Ambe</option>
@@ -14,15 +14,10 @@
             <option value="Abhi">Abhi</option>
             <option value="Priyanka">Priyanka</option>
         </select>
-        <input type="date" name="date" required>
+        Start Date:<input type="date" name="start_date" required>
+        End Date:<input type="date" name="end_date" required>
         <input type="submit" value="Sumbit">
-    </div>
-
-</form>
-<form action="/bill_details" method="get">
-    <div align="center">
-        <input type="submit" value="Print Bill">
-    </div>
+        </div>
 </form>
 </body>
 </html>

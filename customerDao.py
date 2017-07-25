@@ -7,15 +7,14 @@ print("Opened database successfully")
 
 def get_customer(customer_name):
     try:
-        cursor = conn.execute("SELECT customer_id, customer_name, address, contact_number, gst_number from customers")
+        cursor = conn.execute("SELECT * from customers where customer_name=?", (customer_name,))
         customer = []
         for row in cursor:
-            if row[1] == customer_name:
-                customer.append(row[0])
-                customer.append(row[1])
-                customer.append(row[2])
-                customer.append(row[3])
-                customer.append(row[4])
+            customer.append(row[0])
+            customer.append(row[1])
+            customer.append(row[2])
+            customer.append(row[3])
+            customer.append(row[4])
 
     except Exception as e:
         return 'An Error Occurred'
@@ -86,38 +85,45 @@ def save_order(products):
 
 
 def get_order(customer_name):
-    cursor = conn.execute("SELECT * from Records")
+    cursor = conn.execute("SELECT * from Records where customer_name=?", (customer_name,))
     order = []
     for row in cursor:
-        if row[0] == customer_name:
-            order.append(row[0])
-            order.append(row[1])
-            order.append(row[2])
-            order.append(row[3])
-            order.append(row[4])
-            order.append(row[5])
-            order.append(row[6])
-            order.append(row[7])
-            order.append(row[8])
-            order.append(row[9])
-            order.append(row[10])
-            order.append(row[11])
-            order.append(row[12])
-            order.append(row[13])
-            order.append(row[14])
-            order.append(row[15])
-            order.append(row[16])
-            order.append(row[17])
-            order.append(row[18])
-            order.append(row[19])
-            order.append(row[20])
-            order.append(row[21])
-            order.append(row[22])
-            order.append(row[23])
-            order.append(row[24])
-            order.append(row[25])
-            order.append(row[26])
-            order.append(row[27])
-            order.append(row[28])
-            order.append(row[29])
+        order.append(row[0])
+        order.append(row[1])
+        order.append(row[2])
+        order.append(row[3])
+        order.append(row[4])
+        order.append(row[5])
+        order.append(row[6])
+        order.append(row[7])
+        order.append(row[8])
+        order.append(row[9])
+        order.append(row[10])
+        order.append(row[11])
+        order.append(row[12])
+        order.append(row[13])
+        order.append(row[14])
+        order.append(row[15])
+        order.append(row[16])
+        order.append(row[17])
+        order.append(row[18])
+        order.append(row[19])
+        order.append(row[20])
+        order.append(row[21])
+        order.append(row[22])
+        order.append(row[23])
+        order.append(row[24])
+        order.append(row[25])
+        order.append(row[26])
+        order.append(row[27])
+        order.append(row[28])
+        order.append(row[29])
     print(order)
+
+
+def get_order_detail(customer_name, start_date, end_date):
+    cursor = conn.execute("select * (select sum(shrikhand_50) from Records) total from Records")
+    for row in cursor:
+        shrikhand_50 = row[0]
+        shrikhand_100 = row[0]
+    print(shrikhand_50, shrikhand_100)

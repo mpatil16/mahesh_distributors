@@ -69,6 +69,20 @@ def get_order_details(customer_name):
     return 'Get Order Details'
 
 
+@app.route('/bill_details', methods=['GET'])
+def bill_details():
+    return render_template('bill_details_page.html')
+
+
+@app.route('/print_bill', methods=['POST'])
+def print_bill():
+    customer_name = request.form['customer_list']
+    start_date = request.form['start_date']
+    end_date = request.form['end_date']
+    customerDao.get_order_detail(customer_name, start_date, end_date)
+    return 'Printing bill'
+
+
 @app.route('/customer_name/<customer_name>', methods=['GET'])
 def get_customer_info(customer_name):
     customer = customerDao.get_customer(customer_name)
