@@ -122,7 +122,8 @@ def get_order(customer_name):
 
 
 def get_order_detail(customer_name, start_date, end_date):
-    cursor = conn.execute("select * (select sum(shrikhand_50) from Records) total from Records")
+    cursor = conn.execute("select sum(shrikhand_50),sum(shrikhand_100) from Records"
+                          " where customer_name=? and date between ? and ?", (customer_name, start_date, end_date,))
     for row in cursor:
         shrikhand_50 = row[0]
         shrikhand_100 = row[0]
