@@ -43,6 +43,8 @@ def get_all():
 
 
 def save_order(products):
+    print("inside save order dao file")
+    print('products::::', products)
     customer_name = products['customer_name']
     date = products['date']
     gst_number = products['gst_number']
@@ -50,11 +52,16 @@ def save_order(products):
     shri_100 = products['shri_100']
     shri_250 = products['shri_250']
     shri_500 = products['shri_500']
+    shri_loose = products['shri_loose']
     amra_50 = products['amra_50']
     amra_100 = products['amra_100']
     amra_250 = products['amra_250']
     amra_500 = products['amra_500']
+    amra_loose = products['amra_loose']
+    keshar_250 = products['keshar_250']
+    keshar_500 = products['keshar_500']
     lassi = products['lassi']
+    tetra_lassi = products['tetra_lassi']
     curd_50 = products['curd_50']
     curd_100 = products['curd_100']
     curd_200 = products['curd_200']
@@ -70,22 +77,28 @@ def save_order(products):
     paneer_200 = products['paneer_200']
     paneer_500 = products['paneer_500']
     plain_tak = products['plain_tak']
+    masala_tak = products['masala_tak']
     tetra_tak = products['tetra_tak']
     aqua_water = products['aqua_water']
-    tetra_lassi = products['tetra_lassi']
+    flavoured = products['flavoured']
+    juice = products['juice']
+    cheese = products['cheese']
+    smp = products['smp']
     cur = conn.cursor()
-    cur.execute("INSERT INTO Records VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
-                " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+    print('before execute')
+    cur.execute("INSERT INTO Products VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,"
+                " ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 (customer_name, date, gst_number, shri_50, shri_100, shri_250, shri_500,
-                 amra_50, amra_100, amra_250, amra_500, lassi, curd_50,
+                 shri_loose, amra_50, amra_100, amra_250, amra_500, amra_loose, keshar_250, keshar_500, lassi, tetra_lassi, curd_50,
                  curd_100, curd_200, curd_400, ghee_200, ghee_500, ghee_1000,
                  cow_200, cow_500, cow_1000, butter_100, butter_500, paneer_200
-                 , paneer_500, plain_tak, tetra_tak, aqua_water, tetra_lassi))
+                 , paneer_500, plain_tak, masala_tak, tetra_tak, aqua_water, flavoured, juice, cheese, smp),)
+    print('After execute')
     conn.commit()
 
 
 def get_order(customer_name):
-    cursor = conn.execute("SELECT * from Records where customer_name=?", (customer_name,))
+    cursor = conn.execute("SELECT * from Products where customer_name=?", (customer_name,))
     order = []
     for row in cursor:
         order.append(row[0])
@@ -122,7 +135,7 @@ def get_order(customer_name):
 
 
 def get_order_detail(customer_name, start_date, end_date):
-    cursor = conn.execute("select sum(shrikhand_50),sum(shrikhand_100) from Records"
+    cursor = conn.execute("select sum(shrikhand_50),sum(shrikhand_100) from Products"
                           " where customer_name=? and date between ? and ?", (customer_name, start_date, end_date,))
     for row in cursor:
         shrikhand_50 = row[0]

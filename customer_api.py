@@ -30,17 +30,24 @@ def save_products():
         customer_name = request.form['customer_name']
         print(customer_name)
         products['customer_name'] = request.form['customer_name']
+        print(products['customer_name'])
         products['date'] = request.form['date']
         products['gst_number'] = request.form['gst_number']
+        print(products['gst_number'])
         products['shri_50'] = request.form['shrikhand_50']
         products['shri_100'] = request.form['shrikhand_100']
         products['shri_250'] = request.form['shrikhand_250']
         products['shri_500'] = request.form['shrikhand_500']
+        products['shri_loose'] = request.form['shrikhand_loose']
         products['amra_50'] = request.form['amrakhand_50']
         products['amra_100'] = request.form['amrakhand_100']
         products['amra_250'] = request.form['amrakhand_250']
         products['amra_500'] = request.form['amrakhand_500']
+        products['amra_loose'] = request.form['amrakhand_loose']
+        products['keshar_250'] = request.form['keshar_250']
+        products['keshar_500'] = request.form['keshar_500']
         products['lassi'] = request.form['lassi']
+        products['tetra_lassi'] = request.form['tetra_lassi']
         products['curd_50'] = request.form['curd_50']
         products['curd_100'] = request.form['curd_100']
         products['curd_200'] = request.form['curd_200']
@@ -56,9 +63,13 @@ def save_products():
         products['paneer_200'] = request.form['paneer_200']
         products['paneer_500'] = request.form['paneer_500']
         products['plain_tak'] = request.form['plain_tak']
+        products['masala_tak'] = request.form['masala_tak']
         products['tetra_tak'] = request.form['tetra_tak']
         products['aqua_water'] = request.form['aqua_water']
-        products['tetra_lassi'] = request.form['tetra_lassi']
+        products['flavoured'] = request.form['flavoured']
+        products['juice'] = request.form['juice']
+        products['cheese'] = request.form['cheese']
+        products['smp'] = request.form['smp']
         customerDao.save_order(products)
     return 'Order Saved'
 
