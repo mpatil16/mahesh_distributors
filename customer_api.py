@@ -14,12 +14,9 @@ def index():
 @app.route('/order', methods=['POST'])
 def order():
     print('Inside order route')
-    customer_name = request.form['customer_list']
-    print('Customer Name', customer_name)
-    date = request.form['date']
-    customer_details = customerDao.get_customer(customer_name)
-    gst_number = customer_details[4]
-    return render_template('order_page.html', customer_names=customer_name, dates=date, gst_numbers=gst_number)
+    customer_list = customerDao.get_all_customer_names()
+    print(customer_list)
+    return render_template('order_page.html', customer_lists=customer_list)
 
 
 @app.route('/save_order', methods=['POST'])
@@ -27,13 +24,8 @@ def save_products():
     if request.method == 'POST':
         print("inside save_order route")
         products = {}
-        customer_name = request.form['customer_name']
-        print(customer_name)
         products['customer_name'] = request.form['customer_name']
-        print(products['customer_name'])
         products['date'] = request.form['date']
-        products['gst_number'] = request.form['gst_number']
-        print(products['gst_number'])
         products['shri_50'] = request.form['shrikhand_50']
         products['shri_100'] = request.form['shrikhand_100']
         products['shri_250'] = request.form['shrikhand_250']

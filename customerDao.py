@@ -42,12 +42,21 @@ def get_all():
     return customer_list
 
 
+def get_all_customer_names():
+    customer_names = []
+    cursor = conn.execute('select * from customers')
+    for row in cursor:
+        customer_names.append(row[1])
+    return customer_names
+
+
 def save_order(products):
     print("inside save order dao file")
     print('products::::', products)
     customer_name = products['customer_name']
+    customer_details = get_customer(customer_name)
     date = products['date']
-    gst_number = products['gst_number']
+    gst_number = customer_details[4]
     shri_50 = products['shri_50']
     shri_100 = products['shri_100']
     shri_250 = products['shri_250']

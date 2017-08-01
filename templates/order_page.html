@@ -9,9 +9,16 @@
         <div align="center">
             <table>
                 <tr align="center">
-                    <td>Customer Name:</td><td><input type="text" value="{{customer_names}}" name="customer_name" size="10"></td>
-                    <td>Date:</td><td><input type="date" name="date" value="{{dates}}"></td>
-                    <td>Gst Number:</td><td><input type="text" name="gst_number" value="{{gst_numbers}}"></td>
+                    <td>Customer Name:</td><td>
+                    <td>
+                        <select name="customer">
+                            {% for customer in customer_lists%}
+                            <option value="{{customer}}">{{customer}}</option>
+                            {% endfor %}
+                        </select>
+
+                    </td>
+                    <td>Date:</td><td><input type="date" name="date" required></td>
                 </tr>
             </table>
         </div>
